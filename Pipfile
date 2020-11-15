@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[packages]
+playsound = "*"
+flask = "*"
+flask-wtf = "*"
+email-validator = "*"
+flask-sqlalchemy = "*"
+flask-mail = "*"
+flask-bcrypt = "*"
+flask-login = "*"
+flask-sijax = "*"
+
+[requires]
+python_version = "3.9"
