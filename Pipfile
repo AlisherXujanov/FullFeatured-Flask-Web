@@ -12,7 +12,7 @@ flask-sqlalchemy = "*"
 flask-mail = "*"
 flask-bcrypt = "*"
 flask-login = "*"
-flask-sijax = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.9"
