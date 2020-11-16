@@ -1,16 +1,18 @@
-{% extends 'layout.html' %}
-    {% block body %}
-        {% for post in posts %}
+{% extends "layout.html" %}
+{% block body %}
+<div class="fixed-left">
+    {% for post in posts %}
         <article class="media content-section">
-            <div class="media-body">
-              <div class="article-metadata">
-                <a class="mr-2" href="#">{{ post.author }}</a>
-                <small class="text-muted">{{ post.date_posted }}</small>
-              </div>
-              <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
-              <p class="article-content">{{ post.content }}</p>
+          <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+          <div class="media-body" style="">
+            <div class="article-metadata">
+              <a class="mr-2">By {{ post.author.username }}</a>
+              <small class="text-muted" style="float: right;">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
             </div>
+            <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
         </article>
-        {% endfor %}
-    {% endblock %}
-    
+    {% endfor %}
+</div>
+{% endblock %}

@@ -35,16 +35,12 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
 
 
-
-
 class UpdateAccountForm(FlaskForm):
     username = StringField('Username',
                            validators=[DataRequired(), Length(min=2, max=20)])
     email = StringField('Email',
                         validators=[DataRequired(), Email()])
-
     picture = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png'])])
-    
     submit = SubmitField('Update')
 
     def validate_username(self, username):
@@ -60,15 +56,7 @@ class UpdateAccountForm(FlaskForm):
                 raise ValidationError('That email is taken. Please choose a different one.')
 
 
-
 class PostForm(FlaskForm):
     title = StringField('Title', validators=[DataRequired()])
     content = TextAreaField('Content', validators=[DataRequired()])
     submit = SubmitField('Post')
-
-
-
-
-
-
-
